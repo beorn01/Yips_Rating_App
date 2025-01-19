@@ -22,8 +22,6 @@ Currently, this platform is being used to study **golfers with the yips**, a mov
 
 - **Video Feedback Collection**
   - Videos fetched dynamically from **AWS S3**.
-  - Users provide ratings (1-5), **Yips severity**, and indicate **neurological disorder presence**.
-  - Optional comments for qualitative feedback.
 
 - **Security & Compliance**
   - Secure authentication with hashed passwords.
