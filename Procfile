@@ -1,0 +1,1 @@
+web: cd video_panel_feedback_railway && gunicorn wsgi:application

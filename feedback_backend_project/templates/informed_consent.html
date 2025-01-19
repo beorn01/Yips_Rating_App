@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informed Consent</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px; /* Avoid content touching screen edges */
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 700px; /* Widen for readability */
+      margin: 40px auto; /* Center container */
+    }
+    /* Center only the main page title */
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    /* Align subtitles to the left */
+    h3 {
+      text-align: left;
+      color: #333;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    /* Left-align paragraph text for readability */
+    p, ul {
+      text-align: left;
+      color: #333;
+      margin-bottom: 1em;
+    }
+    label {
+      display: block;
+      text-align: left; /* Left-align labels */
+      margin-bottom: 10px;
+      color: #333;
+    }
+    input[type="text"] {
+      display: block;
+      width: 80%; /* Center and widen the text fields */
+      margin: 0 auto 20px;
+      box-sizing: border-box;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #007bff;
+      border-radius: 5px;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #0056b3;
+    }
+    /* Center radio-group content but keep each label inline or block as desired */
+    .radio-group {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .radio-group label {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+    button {
+      display: block;
+      width: 80%; /* Center and widen the button */
+      margin: 0 auto;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #28a745;
+      color: white;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .error-message {
+      color: red;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Page Title -->
+    <h1>Informed Consent</h1>
+    
+    <!-- Informed Consent Text -->
+    <p><strong>Understanding the Pathophysiological Origins of the Yips in Task-Specific Movement Disorders</strong></p>
+    <p><strong>Affiliation:</strong> University of Groningen</p>
+    <p><strong>Contact Information:</p>
+    <p><strong>beorn01@gmail.com</p>
+    <p><strong>erik_van_wensen@hotmail.com</p>
+
+    
+    <h3>Introduction</h3>
+    <p>You are invited to participate in a research study that aims to better understand the pathophysiological origins of the yips, a task-specific movement disorder. Your expertise as a neurologist is critical to this investigation, as your evaluation of video recordings will contribute to our analysis of symptom severity.</p>
+    <p>Before deciding to participate, it is important to understand why the research is being conducted and what your involvement will entail. Please read this form carefully. Feel free to ask questions if anything is unclear or if you need more information.</p>
+    
+    <h3>Purpose of the Study</h3>
+    <p>This study seeks to evaluate the symptoms of the yips through video recordings of affected individuals. By assessing and rating the severity of symptoms, we aim to explore the underlying neurological mechanisms and their relationship to task-specific motor dysfunctions.</p>
+    
+    <h3>Procedures</h3>
+    <p>If you consent to participate, you will:</p>
+    <ul>
+      <li>View a randomized series of videos showing individuals performing specific tasks.</li>
+      <li>Provide feedback for each video, including:
+        <ul>
+          <li>A severity rating for yips symptoms.</li>
+          <li>Indication of the presence of neurological disorder traits (Yes/No).</li>
+          <li>Additional comments (optional).</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Your feedback will be securely stored and analyzed for research purposes only.</p>
+    
+    <h3>Duration</h3>
+    <p>Your participation will require approximately three hours to complete the evaluation of all assigned videos. Luckily, this process can be split into as many individual sessions as you want, because we offer the ability to log in and out freely. Simply choose  the 'existing user' button from the homepage and choose your participant ID. </p>
+    
+    <h3>Confidentiality</h3>
+    <p>All information collected in this study will be kept strictly confidential. Your responses will be anonymized and stored in a secure database. Only the research team will have access to the data.</p>
+    
+    <h3>Voluntary Participation</h3>
+    <p>Participation is completely voluntary. You may withdraw at any time without providing a reason or facing any penalties. To withdraw, you can simply exit the study or contact the principal investigator.</p>
+    
+    <h3>Contact Information</h3>
+    <p>If you have any questions about this study or your rights as a participant, please contact:</p>
+    <p><strong>Beorn Nijenhuis, PhD</strong></p>
+    <p>Email: <a href="mailto:beorn01@gmail.com">beorn01@gmail.com</a></p>
+    <p><strong>Erik van Wensen, MD</strong></p>
+    <p>Email: <a href="erik_van_wensen@hotmail.com">erik_van_wensen@hotmail.com</a></p>
+    
+    <h3>Consent</h3>
+    <p>By completing the form below, you confirm that:</p>
+    <ul>
+      <li>You have read and understood the information provided.</li>
+      <li>You have had the opportunity to ask questions.</li>
+      <li>You voluntarily agree to participate in this study.</li>
+    </ul>
+    
+    <!-- Single Form at the Bottom -->
+    <form method="post">
+      {% csrf_token %}
+      
+      <!-- Name fields -->
+      <label>
+        First Name:
+        <input type="text" name="first_name" required>
+      </label>
+      <label>
+        Last Name:
+        <input type="text" name="last_name" required>
+      </label>
+      
+      <!-- Radio buttons for consent -->
+      <div class="radio-group">
+        <p>Do you consent to participate in this study?</p>
+        <label><input type="radio" name="consent" value="yes" required> Yes</label>
+        <label><input type="radio" name="consent" value="no" required> No</label>
+      </div>
+      
+      <!-- Submit button -->
+      <button type="submit">Submit</button>
+      
+      {% if error_message %}
+        <p class="error-message">{{ error_message }}</p>
+      {% endif %}
+    </form>
+  </div>
+</body>
+</html>

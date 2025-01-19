@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 15px 0;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button.new-user {
+            background-color: #28a745;
+            color: white;
+        }
+        button.new-user:hover {
+            background-color: #218838;
+        }
+        button.existing-user {
+            background-color: #007bff;
+            color: white;
+        }
+        button.existing-user:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Authentication</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button class="new-user" name="action" value="new_user">New User</button>
+            <button class="existing-user" name="action" value="existing_user">Existing User</button>
+        </form>
+    </div>
+</body>
+</html>

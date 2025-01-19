@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participant Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px; /* Add padding to prevent cutting */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Change to flex-start */
+            min-height: 100vh; /* Ensure full view height is used */
+            box-sizing: border-box;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Participant Registration</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label>First Name: <input type="text" name="first_name" value="{{ first_name }}" required></label><br>
+            <label>Last Name: <input type="text" name="last_name" value="{{ last_name }}" required></label><br>
+            <label>Email: <input type="email" name="email" required></label><br>
+            <label>Nationality: <input type="text" name="nationality" required></label><br>
+            <label>Specialty: <input type="text" name="specialty" required></label><br>
+            <label>Affiliated Institution: <input type="text" name="affiliated_institution" required></label><br>
+            <label>Years of Experience in Neurology: <input type="number" name="years_of_experience_in_neurology" required></label><br>
+            <label>Expert in Task-Specific Dystonia: <input type="checkbox" name="expert_in_task_specific_dystonia"></label><br>
+            <label>Treated Task-Specific Dystonia: <input type="checkbox" name="treated_task_specific_dystonia"></label><br>
+            <label>Primary Area of Research: <input type="text" name="primary_area_of_research" required></label><br>
+            <label>Country of Medical Training: <input type="text" name="country_of_medical_training" required></label><br>
+            <label>Further Comments: <textarea name="further_comments"></textarea></label><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
