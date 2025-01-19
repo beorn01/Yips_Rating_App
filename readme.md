@@ -1,6 +1,13 @@
 # 🎥 Video Panel Feedback Platform
 
-A **Django-based** web application designed for structured **video feedback collection**. Participants watch randomized videos and provide ratings, severity assessments, and comments. The system securely manages participant data, tracks progress, and ensures a streamlined feedback workflow.
+A **Django-based** web application designed for structured **video feedback collection**. ### 
+This Django-based web application is designed to facilitate structured video feedback collection for research purposes. Participants watch randomized videos and provide structured feedback, including ratings, severity assessments, and optional comments. The system securely manages participant data, tracks progress, and ensures a streamlined feedback workflow.
+
+### Types of Videos in This Use Case
+
+Currently, this platform is being used to study **golfers with the yips**, a movement disorder characterized by involuntary muscle spasms that can disrupt performance.  The collected data helps advance research into movement disorders and their impact on performance, but the videos could be anything—ranging from sports performance analysis to medical case studies, rehabilitation exercises, or even general movement assessments for biomechanical research.
+
+
 
 ## 🚀 Features
 
